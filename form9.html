@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Survey Form</title>
+    <style>
+        /* Form alanını sade ve öğrenci işi düzenleyen CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: #333333;
+            margin: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1b5e20; /* Yakın Doğu yeşiliyle uyumlu */
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 550px;
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        /* İsim ve Email satır düzeni */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* İstenen fieldset ve legend yapılandırması */
+        fieldset {
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 5px;
+            color: #1b5e20;
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        /* Çoklu seçim listesi */
+        select {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        /* Büyük metin kutusu */
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            resize: none;
+        }
+
+        /* Butonların yerleşimi */
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border: 1px solid #cccccc;
+            background-color: #f5f5f5;
+            color: #333333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e8f5e9;
+            border-color: #1b5e20;
+            color: #1b5e20;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #ffebee;
+            border-color: #d32f2f;
+            color: #d32f2f;
+        }
+        
+        footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Music Survey</h1>
+
+    <form action="http://www.uyar.com/teaching/ecc006/2017spring/login.php" method="POST">
+        
+        <div class="form-group">
+            <label for="userName">Name:</label>
+            <input type="text" id="userName" name="userName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="userEmail">E-Mail:</label>
+            <input type="email" id="userEmail" name="userEmail" required>
+        </div>
+
+        <fieldset>
+            <legend>Select Your Favorite Types of Music:</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="musicType[]" value="Pop"> Pop</label>
+                <label><input type="checkbox" name="musicType[]" value="Classical"> Classical</label>
+                <label><input type="checkbox" name="musicType[]" value="Rock"> Rock</label>
+                <label><input type="checkbox" name="musicType[]" value="Folk"> Folk</label>
+                <label><input type="checkbox" name="musicType[]" value="Rap"> Rap</label>
+                <label><input type="checkbox" name="musicType[]" value="Other"> Other</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Select how often you purchase Music CDs:</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="purchaseFrequency" value="Weekly"> Weekly</label>
+                <label><input type="radio" name="purchaseFrequency" value="FewEachYear" checked> A few CDs each year</label>
+                <label><input type="radio" name="purchaseFrequency" value="Monthly"> Monthly</label>
+                <label><input type="radio" name="purchaseFrequency" value="Never"> Never purchase</label>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="listenLocation">Select the locations you listen to Music:</label>
+            <select id="listenLocation" name="listenLocation" size="3">
+                <option value="Home" selected>At home</option>
+                <option value="Car">In the car</option>
+                <option value="MP3Player">Anywhere (MP3 Player)</option>
+                <option value="Concert">Concerts / Festivals</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="musicRole">What role does music play in your life?</label>
+            <textarea id="musicRole" name="musicRole" cols="60" rows="3" placeholder="Tell us about the role of music..."></textarea>
+        </div>
+
+        <div class="button-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+    <footer>
+        <p>Mustafa Kısan - 20232538 - Near East University SWE Department</p>
+    </footer>
+
+</body>
+</html>
